@@ -240,7 +240,6 @@ it = 41
 y = 123.456789
 
 # from the class notes
-"""
 print( '0. The value of PI is approximately %5.3f.' % math.pi ) 
 # the above statement without () is now an error )
 print( "1. After iteration.", it, "the solution was.", y )
@@ -251,17 +250,16 @@ print( '5. After iteration. %+5d, the solution was. %-10.2f.' %(it,y) )
 print( '6. After iteration. %+-5d, the solution was. %+10.2f.' %(it,y) )
 print( '7. After iteration. %05d, the solution was. %020.2f.' %(it,y) )
 print( '8. After iteration. %05d, the solution was. %10.2e.' %(it,y) )
-"""
 
-# hiearc
-Prof. Strzemecki
+# # hiearc
+# Prof. Strzemecki
 
-()
-** exponentiation            right-to-left
-- negation                   left-to-right
-*, /, //, %                  left-to-right
-+, -                         left-to-right
-    <, > , <= , >= , != , ==         left-to-right
-    not left-to-right
-    and left-to-right
-    or left-to-right
+# ()
+# ** exponentiation            right-to-left
+# - negation                   left-to-right
+# *, /, //, %                  left-to-right
+# +, -                         left-to-right
+#     <, > , <= , >= , != , ==         left-to-right
+#     not left-to-right
+#     and left-to-right
+#     or left-to-right
