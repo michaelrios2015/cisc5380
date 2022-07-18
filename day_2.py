@@ -181,17 +181,17 @@
 
 # pretty
 
-# print()
-# a = float(input('Enter a: '))
-# b = float(input('Enter b: '))
-# c = float(input('Enter c: '))
-# print()
-
-
 import math
-a = 3
-b = 4
-c = 5
+print()
+a = float(input('Enter a: '))
+b = float(input('Enter b: '))
+c = float(input('Enter c: '))
+print()
+
+
+# a = 3
+# b = 4
+# c = 5
 
 print('is ', end=' ')
 if a + b > c and b + c > a and c + a > b:
@@ -240,16 +240,16 @@ it = 41
 y = 123.456789
 
 # from the class notes
-print( '0. The value of PI is approximately %5.3f.' % math.pi ) 
+print('0. The value of PI is approximately %5.3f.' % math.pi)
 # the above statement without () is now an error )
-print( "1. After iteration.", it, "the solution was.", y )
-print( '2. After iteration. %d, the solution was. %f.' %(it,y) )
-print( '3. After iteration. %5d, the solution was. %3.1f.' %(it,y) )
-print( '4. After iteration. %-5d, the solution was. %10.2f.' %(it,y) )
-print( '5. After iteration. %+5d, the solution was. %-10.2f.' %(it,y) )
-print( '6. After iteration. %+-5d, the solution was. %+10.2f.' %(it,y) )
-print( '7. After iteration. %05d, the solution was. %020.2f.' %(it,y) )
-print( '8. After iteration. %05d, the solution was. %10.2e.' %(it,y) )
+print("1. After iteration.", it, "the solution was.", y)
+print('2. After iteration. %d, the solution was. %f.' % (it, y))
+print('3. After iteration. %5d, the solution was. %3.1f.' % (it, y))
+print('4. After iteration. %-5d, the solution was. %10.2f.' % (it, y))
+print('5. After iteration. %+5d, the solution was. %-10.2f.' % (it, y))
+print('6. After iteration. %+-5d, the solution was. %+10.2f.' % (it, y))
+print('7. After iteration. %05d, the solution was. %020.2f.' % (it, y))
+print('8. After iteration. %05d, the solution was. %10.2e.' % (it, y))
 
 # # hiearc
 # Prof. Strzemecki
