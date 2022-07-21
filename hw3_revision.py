@@ -13,6 +13,7 @@ If a user enters a negative height or a bouncing ratio not between 0 and 1 they 
 
 If the users enters a non number the program will crash 
 
+The program will allow the user to run it again or exit 
 '''
 import sys
 
@@ -28,33 +29,32 @@ def total_height(h, br):
   return total_height
 
 print('\n-----Distanced traveled by a bouncing ball-----\n')
-h = float(input(
-    'Please enter the height from which you will drop the ball, a postive real number please: '))
 
-while h <= 0:
-  h = float(input(
-    'Please enter the height from which you will drop the ball, a postive real number please: '))
+cont = 'y'
 
-br = float(input(
-  'Please enter the bounce ratio of your ball, between one and zero please: '))
-while br <= 0 or br >= 1: 
-    br = float(input(
-    'Please enter the bounce ratio of your ball, between one and zero please: '))
-
-
-print("\nYou dropped a ball from a height of--:   %6.2f" % h)
-print("With a bounce ratio of --------------:   %6.2f" % br)
-
-# total_height = h
-
-# while h > sys.float_info.min:
+while cont == 'Y' or cont == 'y':
   
-#     h = h*br
-
-#     total_height = total_height + 2 * h
-
-print('------------------------------------------------')
-print("The ball traveled a total distance of:   %6.2f" % total_height(h, br))
-print()
-
-
+  h = float(input(
+      'Please enter the height from which you will drop the ball, a postive real number please: '))
+  
+  while h <= 0:
+    h = float(input(
+      'Please enter the height from which you will drop the ball, a postive real number please: '))
+  
+  br = float(input(
+    'Please enter the bounce ratio of your ball, between one and zero please: '))
+  while br <= 0 or br >= 1: 
+      br = float(input(
+      'Please enter the bounce ratio of your ball, between one and zero please: '))
+  
+  
+  print("\nYou dropped a ball from a height of--:   %6.2f" % h)
+  print("With a bounce ratio of --------------:   %6.2f" % br)
+  
+  
+  print('------------------------------------------------')
+  print("The ball traveled a total distance of:   %6.2f" % total_height(h, br))
+  print()
+  
+  cont = input("To continue press Y or y any other character to exit: ")
+  print()
