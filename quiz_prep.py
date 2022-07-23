@@ -6,31 +6,55 @@
 #
 # take in x from keyboard
 #
-# 1 + x + x^/2! + + x^3/3! +.... x^n/n!
+# 1 + x + x^2/2! + + x^3/3! +.... x^n/n!
 
-n = 1000
 
-x = 3
+cont = 'y'
 
-new_x = x
+while cont == 'y' or cont == 'Y':
 
-fact = 1
+    # so this is teh numbers of time we need to sum
+    n = 0
+    while n < 1:
+        n = int(input(
+            'please enter the number of times to sum, integers of 1 or greater please: '))
 
-total = 1
+    # this is the number to sum
+    x = 0
+    while x < 1:
+        x = int(
+            input('please enter the number to sum, real numbers of 1 or greater please: '))
 
-for i in range(2, n+1):
+    # we need an x to the power of
+    x_thpo = x
 
-    # fact = fact * i
-    # print('fact ', fact)
+    # our first factorial
+    fact = 1
 
-    total += new_x/fact
-    # print('new_x ', new_x)
+    # our fist total
+    total = 1
 
-    # print('fact ', fact)
+    # the number of times we will go through the summations
+    for i in range(2, n+1):
 
-    fact = fact * (i)
-    # print(new_x/fact)
-    new_x = new_x * x
-    # print('new_x ', new_x)
+        # fact = fact * i
+        # print('fact ', fact)
 
-print('total ---  %f' % total)
+        # so we add to our total the current x^n/n!
+        total += x_thpo/fact
+        # print('new_x ', new_x)
+
+        # print('fact ', fact)
+
+        # now we update the factorial (this is why I wanted to start at 2)
+        fact = fact * (i)
+        # print(new_x/fact)
+
+        # we update the x^n
+        x_thpo = x_thpo * x
+        # print('new_x ', new_x)
+
+    # we return the total
+    print('total ---  %7f' % total)
+
+    cont = input('to continue press y or Y anything else to exit: ')
