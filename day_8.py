@@ -44,7 +44,7 @@ remeber think first then code, you will be stuck without this
 #     if l[start] < p:
 #         start += 1
 #     else:
-#         temp = l[start] 
+#         temp = l[start]
 #         l[start] = l[end]
 #         l[end] = temp
 #         end -= 1
@@ -60,7 +60,7 @@ how do we remove all the negative values
 loop through 
 
 '''
-# # for loop does not work as we change teh length of the list 
+# # for loop does not work as we change teh length of the list
 
 # def remove_negatives(l):
 
@@ -98,11 +98,11 @@ associative data structure, you need the key to access value
 
 
 '''
+
+
 from multiprocessing.sharedctypes import Value
 from random import randint
-
-
-daily_temps = { 'sun':62.8, 'sat': 78.9 }
+daily_temps = {'sun': 62.8, 'sat': 78.9 }
 
 # print(daily_temps)
 
@@ -111,26 +111,26 @@ daily_temps = { 'sun':62.8, 'sat': 78.9 }
 
 # this works!!
 # you get the value
-# print(daily_temps['sun']) 
+# print(daily_temps['sun'])
 
 # any immutable data strucre can be used as a key strings, integers, tuples
 
 # interesting
-temps = { ('Apr', 2, 2001): 43, ('Apr', 7, 2001): 33}
+temps = {('Apr', 2, 2001): 43, ('Apr', 7, 2001): 33}
 
 # works fine
-print(temps[('Apr', 2, 2001)]) 
+print(temps[('Apr', 2, 2001)])
 
-# key error log 
-# print(temps[('Apr', 2, 2002)]) 
+# key error log
+# print(temps[('Apr', 2, 2002)])
 
 # creates an empty dictionary
 dict()
 
 
-# so if s is a 2 d list 
+# so if s is a 2 d list
 s = [['apples', 2.24], ['pears', 6]]
-# neat!! it takes it in and turns it into a dictionary 
+# neat!! it takes it in and turns it into a dictionary
 d = dict(s)
 print(d)
 
@@ -191,7 +191,7 @@ difference - opposit intersection I would imagine
 # # cool!!
 # print(A.symmetric_difference(B))
 
-# # just like normal 
+# # just like normal
 # len(A)
 
 # # very useful for math problems
@@ -231,11 +231,10 @@ flip row and column and they should be the same so [1, 0] = [0, 1]
 we will use a while loop so we can break if it is not symmetric
 '''
 
-from random import randint
 
 def create_matrix():
 
-    n = randint(2,5)
+    n = randint(2, 5)
 
     l = []
 
@@ -243,8 +242,10 @@ def create_matrix():
     for i in range(n):
         # l.append([])
         row = []
+        # so build the entire row
         for j in range(n):
-            row.append(randint(0,5))
+            row.append(randint(0, 5))
+        # then attach them
         l.append(row)
 
     return l
@@ -254,34 +255,44 @@ l = create_matrix()
 
 print(l)
 
-# 
+#
+
 
 def symetric_matrix(l):
 
-# we just assume it's true
+    # we just assume it's true
     symetric = True
 
 # start at row 0
-    row = 0 
-    
-    # we assume it is symteric 
-    # while it has not priven to be asymetric and we have 
+    row = 0
+
+    # so I woul have just done two for loops with 2 return statements
+    # but that is not how it is supposed to be done at least in this class
+
+    # we assume it is symteric
+    # while it has not priven to be asymetric and we have
     while symetric and row < len(l):
+        # that's clever!! we just need to check half
         col = row + 1
         while symetric and col < len(l[0]):
+            # we don't need to check [0][0], [1][1], they are on the dignol with no corresopneding checky things
             if row != col:
+                # otherwise we check and if they don't equal each other
                 if l[row][col] != l[col][row]:
+                    # it's not symateric
                     symetric = False
-
-            col +=1
+            # iterate col
+            col += 1
+        # iterate row
         row += 1
 
+    # so if we made it through symetric is still tru if not it's fasle
     return symetric
 
 
-#  
-l = [[0,1, 1],[1,0, 1], [1,1, 0]]
-print(symetric_matrix(l))  
+#
+l = [[0, 1, 1], [1, 0, 1], [1, 1, 0]]
+print(symetric_matrix(l))
 
 if symetric_matrix(l):
     print
